@@ -9,6 +9,7 @@ import Rating from "@mui/material/Rating";
 import Button from "@mui/material/Button";
 import Divider from "@mui/material/Divider";
 import MenuItem from "@mui/material/MenuItem";
+import { Avatar } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import { formHelperTextClasses } from "@mui/material/FormHelperText";
 
@@ -21,6 +22,7 @@ import Label from "src/components/label";
 import Iconify from "src/components/iconify";
 import { ColorPicker } from "src/components/color-utils";
 import FormProvider, { RHFSelect } from "src/components/hook-form";
+import { color, fontSize, width } from "@mui/system";
 
 // import IncrementerButton from "./common/incr/ementer-button";
 
@@ -82,7 +84,7 @@ export default function ProductDetailsSummary() {
         {`(9.12k reviews)`}
       </Stack>
 
-      <p className="text-[29px] font-bold mt-5">Rp. 1.000.000</p>
+      <p className="text-[29px] font-bold my-5">Rp. 1.000.000</p>
 
       <Typography
         variant="body2"
@@ -104,8 +106,63 @@ export default function ProductDetailsSummary() {
         mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis
         tellus.
       </Typography>
+    </div>
+  );
 
-      <Divider orientation="vertical" flexItem />
+  const renderSeller = (
+    <div>
+      <Divider sx={{ borderStyle: "dashed", my: 3 }} />
+      <div className="flex items-start justify-start gap-4">
+        <Avatar
+          alt="Cindy Baker"
+          src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          sx={{
+            width: 56,
+            height: 56,
+          }}
+        />
+        <div className="flex flex-col items-start">
+          <p className="text-[16px] font-bold ms-[5px]">Barber Bandung</p>
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2 max-w-xs">
+              <Iconify
+                icon="mdi:location-on-outline"
+                width={24}
+                height={24}
+                style={{ color: "#1D9CAB" }}
+              />
+              <p className="text-[13px] font-light">Bandung, Indonesia</p>
+            </div>
+            <div className="flex items-center gap-2 max-w-xs">
+              <Iconify
+                icon="mingcute:profile-line"
+                style={{ color: "#1D9CAB" }}
+                width={24}
+                height={24}
+              />
+              <p className="text-[13px] font-light">Contact</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <Typography
+        variant="body2"
+        sx={{ color: "text.secondary" }}
+        fontSize={13}
+        marginTop={2}
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.
+        Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla,
+        mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis
+        tellus.
+      </Typography>
+      <Divider sx={{ borderStyle: "dashed", my: 3 }} />
+    </div>
+  );
+
+  const renderOption = (
+    <div>
+      <p>Hello</p>
     </div>
   );
 
@@ -114,6 +171,7 @@ export default function ProductDetailsSummary() {
       {renderLabel}
       {renderInventoryType}
       {renderDetail}
+      {renderSeller}
     </div>
   );
 }

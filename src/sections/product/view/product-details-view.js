@@ -17,11 +17,15 @@ import { useSettingsContext } from "src/components/settings";
 
 import { paths } from "src/routes/paths";
 
+import { ProductDetailsSkeleton } from "../product-skeleton";
 import ProductDetailsCarousel from "../product-details-carousel";
 import ProductDetailsSummary from "../product-details-summary";
 
 export default function ProductDetailsView() {
   const settings = useSettingsContext();
+
+  // Render skeleton add loading from API
+  const renderSkeleton = <ProductDetailsSkeleton />;
 
   return (
     <Container
@@ -37,13 +41,9 @@ export default function ProductDetailsView() {
         </Grid>
 
         <Grid xs={12} md={6} lg={5}>
-          <div>
-            <ProductDetailsSummary />
-          </div>
+          <ProductDetailsSummary />
         </Grid>
       </Grid>
-
-      {/* <ProductDetailsCarousel /> */}
     </Container>
   );
 }

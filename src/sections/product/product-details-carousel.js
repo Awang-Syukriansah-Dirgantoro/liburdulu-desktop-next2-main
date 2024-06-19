@@ -21,15 +21,15 @@ const THUMB_SIZE = 64;
 const PRODUCT = [
   {
     images:
-      "https://images.unsplash.com/photo-1718227696407-4de5de9c3599?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://api-dev-minimal-v6.vercel.app/assets/images/m-product/product-6.webp",
   },
   {
     images:
-      "https://plus.unsplash.com/premium_photo-1687201985713-e06cad0033ce?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://api-dev-minimal-v6.vercel.app/assets/images/m-product/product-2.webp",
   },
   {
     images:
-      "https://images.unsplash.com/photo-1718110190589-a97fb4143663?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://api-dev-minimal-v6.vercel.app/assets/images/m-product/product-4.webp",
   },
 ];
 
@@ -82,18 +82,22 @@ const StyledThumbnailsContainer = styled("div")(({ length, theme }) => ({
 export default function ProductDetailsCarousel({ product }) {
   const theme = useTheme();
 
+  // Mapping Images
   const slides = PRODUCT.map((img) => ({
-    src: img,
+    src: img.images,
   }));
 
+  // Slides
   const lightbox = useLightBox(slides);
 
+  // Carousel Large
   const carouselLarge = useCarousel({
     rtl: false,
     draggable: false,
     adaptiveHeight: true,
   });
 
+  // Config Thumb slide carousel
   const carouselThumb = useCarousel({
     rtl: false,
     centerMode: true,
