@@ -7,6 +7,7 @@ import { LocalizationProvider } from "src/locales";
 import SnackbarProvider from "src/components/snackbar/snackbar-provider";
 import { MotionLazy } from "src/components/animate/motion-lazy";
 import ProgressBar from "src/components/progress-bar";
+import { AuthProvider } from "src/auth/context/jwt";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -49,28 +50,30 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={primaryFont.className}>
       <body className={inter.className}>
-        <LocalizationProvider>
-          <SettingsProvider
-            defaultSettings={{
-              themeMode: "light", // 'light' | 'dark'
-              themeDirection: "ltr", //  'rtl' | 'ltr'
-              themeContrast: "default", // 'default' | 'bold'
-              themeLayout: "vertical", // 'vertical' | 'horizontal' | 'mini'
-              themeColorPresets: "default", // 'default' | 'cyan' | 'purple' | 'blue' | 'orange' | 'red'
-              themeStretch: false,
-            }}
-          >
-            <ThemeProvider>
-              <SnackbarProvider>
-                <MotionLazy>
-                  <SettingsDrawer />
-                  <ProgressBar />
-                  {children}
-                </MotionLazy>
-              </SnackbarProvider>
-            </ThemeProvider>
-          </SettingsProvider>
-        </LocalizationProvider>
+        <AuthProvider>
+          <LocalizationProvider>
+            <SettingsProvider
+              defaultSettings={{
+                themeMode: "light", // 'light' | 'dark'
+                themeDirection: "ltr", //  'rtl' | 'ltr'
+                themeContrast: "default", // 'default' | 'bold'
+                themeLayout: "vertical", // 'vertical' | 'horizontal' | 'mini'
+                themeColorPresets: "default", // 'default' | 'cyan' | 'purple' | 'blue' | 'orange' | 'red'
+                themeStretch: false,
+              }}
+            >
+              <ThemeProvider>
+                <SnackbarProvider>
+                  <MotionLazy>
+                    <SettingsDrawer />
+                    <ProgressBar />
+                    {children}
+                  </MotionLazy>
+                </SnackbarProvider>
+              </ThemeProvider>
+            </SettingsProvider>
+          </LocalizationProvider>
+        </AuthProvider>
       </body>
     </html>
   );

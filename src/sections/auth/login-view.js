@@ -13,13 +13,13 @@ import Typography from "@mui/material/Typography";
 import LoadingButton from "@mui/lab/LoadingButton";
 import InputAdornment from "@mui/material/InputAdornment";
 
-import { paths } from "src/routes/paths";
+// import { paths } from "src/routes/paths";
 import { RouterLink } from "src/routes/components";
 import { useRouter, useSearchParams } from "src/routes/hooks";
 
 import { useBoolean } from "src/hooks/use-boolean";
 
-// import { useAuthContext } from "src/auth/hooks";
+import { useAuthContext } from "src/auth/hooks";
 // import { PATH_AFTER_LOGIN } from "src/config-global";
 
 import Iconify from "src/components/iconify";
@@ -28,28 +28,35 @@ import FormProvider, { RHFTextField } from "src/components/hook-form";
 // ----------------------------------------------------------------------
 
 export default function LoginView() {
-  //   const { login } = useAuthContext();
+  const { login } = useAuthContext();
 
   const router = useRouter();
 
   const [errorMsg, setErrorMsg] = useState("");
 
-//   const searchParams = useSearchParams();
+  const searchParams = useSearchParams();
 
-//   const returnTo = searchParams.get("returnTo");
+  const returnTo = searchParams.get("returnTo");
 
   const password = useBoolean();
 
+  // const LoginSchema = Yup.object().shape({
+  //   email: Yup.string()
+  //     .required("Email is required")
+  //     .email("Email must be a valid email address"),
+  //   password: Yup.string().required("Password is required"),
+  // });
+
   const LoginSchema = Yup.object().shape({
-    email: Yup.string()
-      .required("Email is required")
-      .email("Email must be a valid email address"),
+    username: Yup.string()
+      .required("Username is required")
+      .min(3, "Username must be at least 3 characters long"),
     password: Yup.string().required("Password is required"),
   });
 
   const defaultValues = {
-    email: "demo@minimals.cc",
-    password: "demo1234",
+    username: "admin",
+    password: "admin123",
   };
 
   const methods = useForm({
@@ -64,17 +71,15 @@ export default function LoginView() {
   } = methods;
 
   const onSubmit = handleSubmit(async (data) => {
-    // try {
-    //   await login?.(data.email, data.password);
+    try {
+      await login?.(data.username, data.password);
 
-    //   router.push(returnTo || PATH_AFTER_LOGIN);
-    // } catch (error) {
-    //   console.error(error);
-    //   reset();
-    //   setErrorMsg(typeof error === "string" ? error : error.message);
-    // }
-
-    router.push("/");
+      router.push(returnTo || "/");
+    } catch (error) {
+      console.error(error);
+      reset();
+      setErrorMsg(typeof error === "string" ? error : error.message);
+    }
   });
 
   const renderHead = (
@@ -84,12 +89,7 @@ export default function LoginView() {
       <Stack direction="row" spacing={0.5}>
         <Typography variant="body2">Belum punya akun?</Typography>
 
-        <Link
-          component={RouterLink}
-          //   href={paths.auth.jwt.register}
-          href={`/`}
-          variant="subtitle2"
-        >
+        <Link component={RouterLink} href={"/register"} variant="subtitle2">
           Daftar akun
         </Link>
       </Stack>
@@ -98,7 +98,7 @@ export default function LoginView() {
 
   const renderForm = (
     <Stack spacing={2.5}>
-      <RHFTextField name="email" label="Alamat email" />
+      <RHFTextField name="username" type="text" label="Alamat email" />
 
       <RHFTextField
         name="password"
@@ -145,9 +145,10 @@ export default function LoginView() {
     <>
       {renderHead}
 
-      {/* <Alert severity="info" sx={{ mb: 3 }}>
-        Use email : <strong>demo@minimals.cc</strong> / password :<strong> demo1234</strong>
-      </Alert> */}
+      <Alert severity="info" sx={{ mb: 3 }}>
+        Use username : <strong>admin</strong> / password :
+        <strong> admin123</strong>
+      </Alert>
 
       {!!errorMsg && (
         <Alert severity="error" sx={{ mb: 3 }}>
