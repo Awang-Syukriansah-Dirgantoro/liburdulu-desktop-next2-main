@@ -55,7 +55,7 @@ export default function Header() {
           </Container>
         </Stack> */}
       <Stack
-        // className='bg-liburdulu-orange'
+        className='bg-liburdulu-white'
         disableGutters
         sx={{
           height: {
@@ -76,18 +76,29 @@ export default function Header() {
           }),
         }}
       >
-        <div className="px-[150px] bg-liburdulu-blue text-white p-2 flex justify-between items-center h-[28px] mb-0.5 p-0.5 flex">
-              <div className='grid grid-flow-col'>Follow Libur Dulu
-                <div className="">
-                  <a href="#" className="text-white">Facebook</a>
-                  <a href="#" className="text-white">Twitter</a>
-                  <a href="#" className="text-white">Instagram</a>
-                  <a href="#" className="text-white">LinkedIn</a>
+        <div className="bg-liburdulu-blue">
+          <Container>
+            <div className='text-white p-2 flex justify-between items-center h-[28px] mb-0.5 p-0.5 flex'>
+              <div className='grid grid-flow-col'><span className='text-liburdulu-white font-[500] text-[13px]'>
+                Follow Liburdulu </span>
+                <div className="ms-3 grid grid-flow-col gap-2">
+                  <a href="#" className='text-liburdulu-white font-[500] text-[13px]'><img src='icon-facebook.png' className='h-[20px] object-contain'/></a>
+                  <a href="#" className='text-liburdulu-white font-[500] text-[13px]'><img src='icon-twitter.png' className='h-[20px] object-contain'/></a>
+                  <a href="#" className='text-liburdulu-white font-[500] text-[13px]'><img src='icon-instagram.png' className='h-[20px] object-contain'/></a>
+                  <a href="#" className='text-liburdulu-white font-[500] text-[13px]'><img src='icon-youtube.png' className='h-[20px] object-contain'/></a>
+                  <a href="#" className='text-liburdulu-white font-[500] text-[13px]'><img src='icon-tiktok.png' className='h-[20px] object-contain'/></a>
                 </div>
               </div>
-
+              <div className='grid grid-flow-col gap-3'>
+                <a href='#' className='text-liburdulu-white font-[500] text-[13px]'>Tentang Kami</a>
+                <a href='#' className='text-liburdulu-white font-[500] text-[13px]'>Promo</a>
+                <a href='#' className='text-liburdulu-white font-[500] text-[13px]'>Bantuan</a>
+                <a href='#' className='text-liburdulu-white font-[500] text-[13px]'>Jadi Mitra Liburdulu</a>
+              </div>
             </div>
-        
+          </Container>
+        </div>
+
         <Container sx={{ height: 1, display: 'flex', alignItems: 'center' }}>
 
           <Logo />

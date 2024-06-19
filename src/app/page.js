@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function HomePage() {
   // return <HomeView />;
-  return <HomepageView />;
+  return <div className=""><HomepageView /></div>;
 }
 
 

@@ -12,10 +12,6 @@ export default function HomepageBanner({ data }) {
 
   const carousel = useCarousel({
     autoplay: true,
-    ...CarouselDots({
-      rounded: true,
-      sx: { mt: 3 },
-    }),
   });
 
   return (
