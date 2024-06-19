@@ -2,10 +2,9 @@
 
 import { _mock } from '../../../_mock';
 
+import Container from '@mui/material/Container';
 import MainLayout from "src/layouts/main";
 import Banner from "src/sections/reuseable/banner";
-import Container from '@mui/material/Container';
-import HomepageCategory from 'src/sections/homepage/homepage-category';
 
 const _carouselsExample = [...Array(20)].map((_, index) => ({
     id: _mock.id(index),
@@ -14,12 +13,15 @@ const _carouselsExample = [...Array(20)].map((_, index) => ({
     description: _mock.description(index),
 }));
 
-export default function CategoryView() {
+export default function ProductView() {
     return (
         <MainLayout>
-            <Container sx={{ mt: 5, mb: 10 }}>
-                <Banner data={_carouselsExample} />
-                <HomepageCategory/>
+            <Container sx={{ mt: -5, mb: 10 }}>
+                <Banner data={_carouselsExample.slice(8, 12)} />
+                <div className='grid grid-cols-2'>
+                    <Banner data={_carouselsExample.slice(8, 12)} />
+                    <Banner data={_carouselsExample.slice(8, 12)} />
+                </div>
             </Container>
         </MainLayout>
     );

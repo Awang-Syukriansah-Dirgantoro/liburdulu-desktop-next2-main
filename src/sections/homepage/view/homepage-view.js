@@ -25,11 +25,13 @@ const _carouselsExample = [...Array(20)].map((_, index) => ({
 export default function HomepageView() {
     return (
         <MainLayout>
-            <Container sx={{ mt: 5 }} className='flex justify-center'>
+            <Container sx={{ mt: 5, mb: 10 }}>
+                {/* <div className='flex flex-col '> */}
                 <Banner data={_carouselsExample.slice(8, 12)} />
                 <HomepageCategory />
                 <HomepageSupermitra />
                 <HomepageRecomprod />
+                {/* </div> */}
             </Container>
         </MainLayout>
     );
