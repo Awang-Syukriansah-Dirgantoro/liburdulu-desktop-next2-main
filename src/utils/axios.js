@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-import { HOST_API } from 'src/config-global';
+import { MAGENTO_API } from 'src/config-global';
 
 // ----------------------------------------------------------------------
 
-const axiosInstance = axios.create({ baseURL: HOST_API });
+const axiosInstance = axios.create({ baseURL: MAGENTO_API });
 
 axiosInstance.interceptors.response.use(
   (res) => res,
@@ -26,28 +26,29 @@ export const fetcher = async (args) => {
 // ----------------------------------------------------------------------
 
 export const endpoints = {
-  chat: '/api/chat',
-  kanban: '/api/kanban',
-  calendar: '/api/calendar',
+  chat: "/api/chat",
+  kanban: "/api/kanban",
+  calendar: "/api/calendar",
   auth: {
-    me: '/api/auth/me',
-    login: '/api/auth/login',
-    register: '/api/auth/register',
+    me: "/api/auth/me",
+    // login: '/api/auth/login',
+    login: "/integration/admin/token",
+    register: "/api/auth/register",
   },
   mail: {
-    list: '/api/mail/list',
-    details: '/api/mail/details',
-    labels: '/api/mail/labels',
+    list: "/api/mail/list",
+    details: "/api/mail/details",
+    labels: "/api/mail/labels",
   },
   post: {
-    list: '/api/post/list',
-    details: '/api/post/details',
-    latest: '/api/post/latest',
-    search: '/api/post/search',
+    list: "/api/post/list",
+    details: "/api/post/details",
+    latest: "/api/post/latest",
+    search: "/api/post/search",
   },
   product: {
-    list: '/api/product/list',
-    details: '/api/product/details',
-    search: '/api/product/search',
+    list: "/api/product/list",
+    details: "/api/product/details",
+    search: "/api/product/search",
   },
 };
