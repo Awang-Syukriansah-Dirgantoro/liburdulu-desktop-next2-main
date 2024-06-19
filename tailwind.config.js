@@ -18,6 +18,7 @@ module.exports = {
       'liburdulu': {
         'blue': '#1D9CAB',
         'orange':'#F99932',
+        'white' : '#FFFFFF'
       } 
     },
   },

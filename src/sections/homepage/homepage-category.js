@@ -16,19 +16,21 @@ export default function HomepageCategory() {
             {/* <div className='grid grid-flow-col justify-around'> */}
             <Slider {...settings}>
                 <div>
-                    <div className='grid grid-row flex justify-center text-center'>
+                    <div className='flex flex-col justify-center items-center text-center'>
                         <Avatar sx={{
                             height: 60,
                             width: 60,
                             bgcolor: 'rgba(29, 156, 171, 0.2)'
                         }}>
-                            <img src='iconvilla.png' className='h-[60] object-contain' />
+                            <img src='iconhotel-convention.png' className='h-[60] object-contain' />
                         </Avatar>
-                        <span className='font-medium text-xs pt-1'>Villa</span>
+                        
+                        <span className='font-medium text-xs pt-1 line-clamp-2 px-10'>Hotel & Convention</span>
+                        
                     </div>
                 </div>
                 <div>
-                    <div className='grid grid-row flex justify-center text-center'>
+                    <div className='flex flex-col justify-center items-center text-center'>
                         <Avatar sx={{
                             height: 60,
                             width: 60,
@@ -36,71 +38,71 @@ export default function HomepageCategory() {
                         }}>
                             <img src='iconvilla.png' className='h-[60] object-contain' />
                         </Avatar>
-                        <span className='font-medium text-xs pt-1'>Villa</span>
+                        <span className='font-medium text-xs pt-1 line-clamp-2 px-10'>Villa</span>
                     </div>
                 </div>
                 <div>
-                    <div className='grid grid-row flex justify-center text-center'>
+                    <div className='flex flex-col justify-center items-center text-center'>
                         <Avatar sx={{
                             height: 60,
                             width: 60,
                             bgcolor: 'rgba(29, 156, 171, 0.2)'
                         }}>
-                            <img src='iconvilla.png' className='h-[60] object-contain' />
+                            <img src='icontour.png' className='h-[60] object-contain' />
                         </Avatar>
-                        <span className='font-medium text-xs pt-1'>Villa</span>
+                        <span className='font-medium text-xs pt-1 line-clamp-2 px-10'>Tour & Travel</span>
                     </div>
                 </div>
                 <div>
-                    <div className='grid grid-row flex justify-center text-center'>
+                    <div className='flex flex-col justify-center items-center text-center'>
                         <Avatar sx={{
                             height: 60,
                             width: 60,
                             bgcolor: 'rgba(29, 156, 171, 0.2)'
                         }}>
-                            <img src='iconvilla.png' className='h-[60] object-contain' />
+                            <img src='iconobject-wisata.png' className='h-[60] object-contain' />
                         </Avatar>
-                        <span className='font-medium text-xs pt-1'>Villa</span>
+                        <span className='font-medium text-xs pt-1 line-clamp-2 px-10'>Object Wisata</span>
                     </div>
                 </div>
                 <div>
-                    <div className='grid grid-row flex justify-center text-center'>
+                    <div className='flex flex-col justify-center items-center text-center'>
                         <Avatar sx={{
                             height: 60,
                             width: 60,
                             bgcolor: 'rgba(29, 156, 171, 0.2)'
                         }}>
-                            <img src='iconvilla.png' className='h-[60] object-contain' />
+                            <img src='icontransportasi.png' className='h-[60] object-contain' />
                         </Avatar>
-                        <span className='font-medium text-xs pt-1'>Villa</span>
+                        <span className='font-medium text-xs pt-1 line-clamp-2 px-10'>Transportasi</span>
                     </div>
                 </div>
                 <div>
-                    <div className='grid grid-row flex justify-center text-center'>
+                    <div className='flex flex-col justify-center items-center text-center'>
                         <Avatar sx={{
                             height: 60,
                             width: 60,
                             bgcolor: 'rgba(29, 156, 171, 0.2)'
                         }}>
-                            <img src='iconvilla.png' className='h-[60] object-contain' />
+                            <img src='iconrelaksasi.png' className='h-[60] object-contain' />
                         </Avatar>
-                        <span className='font-medium text-xs pt-1'>Villa</span>
+                        <span className='font-medium text-xs pt-1 line-clamp-2 px-10'>Relaksasi</span>
                     </div>
                 </div>
                 <div>
-                    <div className='grid grid-row flex justify-center text-center'>
+                    <div className='flex flex-col justify-center items-center text-center'>
                         <Avatar sx={{
                             height: 60,
                             width: 60,
                             bgcolor: 'rgba(29, 156, 171, 0.2)'
                         }}>
-                            <img src='iconvilla.png' className='h-[60] object-contain' />
+                            <img src='iconkuliner.png' className='h-[60] object-contain' />
                         </Avatar>
-                        <span className='font-medium text-xs pt-1'>Villa</span>
+                        <span className='font-medium text-xs pt-1 line-clamp-2 px-10'>Kuliner</span>
                     </div>
                 </div>
                 <div>
-                    <div className='grid grid-row flex justify-center text-center'>
+                    <div className='flex flex-col justify-center items-center text-center'>
                         <Avatar sx={{
                             height: 60,
                             width: 60,
@@ -108,11 +110,11 @@ export default function HomepageCategory() {
                         }}>
                             <img src='iconvilla.png' className='h-[60] object-contain' />
                         </Avatar>
-                        <span className='font-medium text-xs pt-1'>Villa</span>
+                        <span className='font-medium text-xs pt-1 line-clamp-2 px-10'>Event</span>
                     </div>
                 </div>
                 <div>
-                    <div className='grid grid-row flex justify-center text-center'>
+                    <div className='flex flex-col justify-center items-center text-center'>
                         <Avatar sx={{
                             height: 60,
                             width: 60,
@@ -120,19 +122,31 @@ export default function HomepageCategory() {
                         }}>
                             <img src='iconvilla.png' className='h-[60] object-contain' />
                         </Avatar>
-                        <span className='font-medium text-xs pt-1'>Villa</span>
+                        <span className='font-medium text-xs pt-1 line-clamp-2 px-10'>Funcation</span>
                     </div>
                 </div>
                 <div>
-                    <div className='grid grid-row flex justify-center text-center'>
+                    <div className='flex flex-col justify-center items-center text-center'>
                         <Avatar sx={{
                             height: 60,
                             width: 60,
                             bgcolor: 'rgba(29, 156, 171, 0.2)'
                         }}>
-                            <img src='iconvilla.png' className='h-[60] object-contain' />
+                            <img src='iconcampcation.png' className='h-[60] object-contain' />
                         </Avatar>
-                        <span className='font-medium text-xs pt-1'>Villa</span>
+                        <span className='font-medium text-xs pt-1 line-clamp-2 px-10'>Campcation</span>
+                    </div>
+                </div>
+                <div>
+                    <div className='flex flex-col justify-center items-center text-center'>
+                        <Avatar sx={{
+                            height: 60,
+                            width: 60,
+                            bgcolor: 'rgba(29, 156, 171, 0.2)'
+                        }}>
+                            <img src='iconcampcation.png' className='h-[60] object-contain' />
+                        </Avatar>
+                        <span className='font-medium text-xs pt-1 line-clamp-2 px-10'>Wisata Religi</span>
                     </div>
                 </div>
             </Slider>
