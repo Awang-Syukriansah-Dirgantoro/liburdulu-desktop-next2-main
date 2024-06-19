@@ -7,14 +7,14 @@ export default function HomepageCategory() {
     var settings = {
         infinite: false,
         speed: 100,
-        slidesToShow: 8.5,
+        slidesToShow: 9.5,
         focusOnSelect: true,
         swipeToSlide: true,
     };
     return (
         <Card className='drop-shadow p-2 my-4'>
             {/* <div className='grid grid-flow-col justify-around'> */}
-            <Slider {...settings}>
+            <Slider {...settings} className='py-[15px]'>
                 <div>
                     <div className='flex flex-col justify-center items-center text-center'>
                         <Avatar sx={{
