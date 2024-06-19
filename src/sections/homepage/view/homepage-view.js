@@ -9,7 +9,7 @@ import CardContent from '@mui/material/CardContent';
 
 import { _mock } from '../../../_mock';
 
-import HomepageBanner from '../homepage-banner';
+import Banner from 'src/sections/reuseable/banner';
 import HomepageCategory from '../homepage-category';
 import HomepageSupermitra from '../homepage-supermitra';
 import MainLayout from 'src/layouts/main';
@@ -26,7 +26,7 @@ export default function HomepageView() {
     return (
         <MainLayout>
             <Container sx={{ mt: 5 }} className='flex justify-center'>
-                <HomepageBanner data={_carouselsExample.slice(8, 12)} />
+                <Banner data={_carouselsExample.slice(8, 12)} />
                 <HomepageCategory />
                 <HomepageSupermitra />
                 <HomepageRecomprod />

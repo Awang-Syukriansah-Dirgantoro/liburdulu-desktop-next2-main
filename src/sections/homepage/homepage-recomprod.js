@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Card } from '@mui/material';
 import Iconify from 'src/components/iconify';
 import Rating from '@mui/material/Rating';
-import ShopCard from './shop-card';
+import ShopCard from '../reuseable/shop-card';
 
 export default function HomepageRecomprod() {
     const [value, setValue] = useState(4);
