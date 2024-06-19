@@ -6,7 +6,7 @@ import { alpha } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
 import ListItemText from '@mui/material/ListItemText';
 
-import { fData } from 'src/utils/format-number';
+// import { fData } from 'src/utils/format-number';
 
 import Iconify from '../iconify';
 import { varFade } from '../animate';
@@ -94,7 +94,7 @@ export default function MultiFilePreview({ thumbnail, files, onRemove, sx }) {
 
             <ListItemText
               primary={isNotFormatFile ? file : name}
-              secondary={isNotFormatFile ? '' : fData(size)}
+              // secondary={isNotFormatFile ? '' : fData(size)}
               secondaryTypographyProps={{
                 component: 'span',
                 typography: 'caption',
